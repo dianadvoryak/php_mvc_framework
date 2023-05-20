@@ -1,0 +1,15 @@
+{
+    "name": "dianadvoryak/php_mvc_framework",
+    "authors": [
+        {
+            "name": "Diana Dvoryak",
+            "email": "dianadvoryak.w@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
