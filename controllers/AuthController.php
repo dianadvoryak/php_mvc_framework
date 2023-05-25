@@ -22,7 +22,9 @@ class AuthController extends Controller
             }
         }
         $this->setLayout('auth');
-        return $this->render('login');
+        return $this->render('login', [
+            'model' => $loginForm
+        ]);
     }
 
     public function register(Request $request)
@@ -45,5 +47,11 @@ class AuthController extends Controller
         return $this->render('register', [
             'model' => $user
         ]);
+    }
+
+    public function logout(Request $request, Response $response)
+    {
+        Application::$app->logout();
+        $response->redirect('/');
     }
 }

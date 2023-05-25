@@ -4,17 +4,26 @@ namespace app\models;
 
 use app\core\Application;
 use app\core\Model;
+use http\Env\Response;
 
 class LoginForm extends Model
 {
-    public string $email;
-    public string $password;
+    public string $email = '';
+    public string $password = '';
 
     public function rules(): array
     {
         return [
             'email' => [self::RULE_REQUIRED, self::RULE_EMAIL],
             'password' => [self::RULE_REQUIRED]
+        ];
+    }
+
+    public function labels(): array
+    {
+        return [
+            'email' => 'Your email',
+            'password' => 'Password'
         ];
     }
 
@@ -29,6 +38,8 @@ class LoginForm extends Model
             $this->addError('password', 'Password is incorrect');
             return false;
         }
+
+        var_dump($user);
 
         return Application::$app->login($user);
     }
