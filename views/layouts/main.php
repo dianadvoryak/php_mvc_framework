@@ -41,7 +41,7 @@ use app\core\Application;
             <?php else: ?>
             <ul class="navbar-nav mb-2 mb-lg-0 ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/login">Login</a>
+                    <a class="nav-link" href="/profile">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Welcome <?php echo Application::$app->user->getDisplayName() ?>
